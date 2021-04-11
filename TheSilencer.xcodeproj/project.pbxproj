@@ -7,9 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		930B60C12623580D00D1C132 /* ZonesTableTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 930B60C02623580D00D1C132 /* ZonesTableTableViewController.swift */; };
+		930B60C32623649F00D1C132 /* AddLocationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 930B60C22623649F00D1C132 /* AddLocationController.swift */; };
+		930B60C526236C8C00D1C132 /* LocationTableInformation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 930B60C426236C8C00D1C132 /* LocationTableInformation.swift */; };
+		930B60C726236CD400D1C132 /* AddLocationInformation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 930B60C626236CD400D1C132 /* AddLocationInformation.swift */; };
 		93BCCBD5261E9A4F00962180 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93BCCBD4261E9A4F00962180 /* AppDelegate.swift */; };
 		93BCCBD7261E9A4F00962180 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93BCCBD6261E9A4F00962180 /* SceneDelegate.swift */; };
-		93BCCBD9261E9A4F00962180 /* BeginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93BCCBD8261E9A4F00962180 /* BeginViewController.swift */; };
 		93BCCBDC261E9A4F00962180 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 93BCCBDA261E9A4F00962180 /* Main.storyboard */; };
 		93BCCBDF261E9A4F00962180 /* TheSilencer.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 93BCCBDD261E9A4F00962180 /* TheSilencer.xcdatamodeld */; };
 		93BCCBE1261E9A5000962180 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 93BCCBE0261E9A5000962180 /* Assets.xcassets */; };
@@ -18,10 +21,13 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		930B60C02623580D00D1C132 /* ZonesTableTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZonesTableTableViewController.swift; sourceTree = "<group>"; };
+		930B60C22623649F00D1C132 /* AddLocationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddLocationController.swift; sourceTree = "<group>"; };
+		930B60C426236C8C00D1C132 /* LocationTableInformation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationTableInformation.swift; sourceTree = "<group>"; };
+		930B60C626236CD400D1C132 /* AddLocationInformation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddLocationInformation.swift; sourceTree = "<group>"; };
 		93BCCBD1261E9A4F00962180 /* TheSilencer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TheSilencer.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		93BCCBD4261E9A4F00962180 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		93BCCBD6261E9A4F00962180 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		93BCCBD8261E9A4F00962180 /* BeginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BeginViewController.swift; sourceTree = "<group>"; };
 		93BCCBDB261E9A4F00962180 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		93BCCBDE261E9A4F00962180 /* TheSilencer.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = TheSilencer.xcdatamodel; sourceTree = "<group>"; };
 		93BCCBE0261E9A5000962180 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -62,8 +68,11 @@
 			children = (
 				93BCCBD4261E9A4F00962180 /* AppDelegate.swift */,
 				93BCCBD6261E9A4F00962180 /* SceneDelegate.swift */,
-				93BCCBD8261E9A4F00962180 /* BeginViewController.swift */,
 				93BFA9C2261EABC50069FC00 /* InitialViewController.swift */,
+				930B60C02623580D00D1C132 /* ZonesTableTableViewController.swift */,
+				930B60C22623649F00D1C132 /* AddLocationController.swift */,
+				930B60C426236C8C00D1C132 /* LocationTableInformation.swift */,
+				930B60C626236CD400D1C132 /* AddLocationInformation.swift */,
 				93BCCBDA261E9A4F00962180 /* Main.storyboard */,
 				93BCCBE0261E9A5000962180 /* Assets.xcassets */,
 				93BCCBE2261E9A5000962180 /* LaunchScreen.storyboard */,
@@ -144,11 +153,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				93BCCBD9261E9A4F00962180 /* BeginViewController.swift in Sources */,
+				930B60C32623649F00D1C132 /* AddLocationController.swift in Sources */,
 				93BFA9C3261EABC50069FC00 /* InitialViewController.swift in Sources */,
+				930B60C12623580D00D1C132 /* ZonesTableTableViewController.swift in Sources */,
 				93BCCBD5261E9A4F00962180 /* AppDelegate.swift in Sources */,
 				93BCCBDF261E9A4F00962180 /* TheSilencer.xcdatamodeld in Sources */,
 				93BCCBD7261E9A4F00962180 /* SceneDelegate.swift in Sources */,
+				930B60C526236C8C00D1C132 /* LocationTableInformation.swift in Sources */,
+				930B60C726236CD400D1C132 /* AddLocationInformation.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

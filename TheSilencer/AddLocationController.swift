@@ -1,14 +1,14 @@
 //
-//  ZonesViewController.swift
+//  AddLocationController.swift
 //  TheSilencer
 //
-//  Created by Aaron Barlow on 4/7/21.
+//  Created by Aaron Barlow on 4/11/21.
 //  Copyright © 2021 Aaron Barlow. All rights reserved.
 //
 
 import UIKit
 
-class InitialViewController: UIViewController {
+class AddLocationController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -17,11 +17,13 @@ class InitialViewController: UIViewController {
     }
     
     override func viewWillAppear(_ animated: Bool) {
-          
-          self.navigationController?.setNavigationBarHidden(true, animated: true)
-        self.navigationController?.setToolbarHidden(true, animated: true)
-          
-      }
+             
+             self.navigationController?.setNavigationBarHidden(false, animated: true)
+             self.navigationController?.setToolbarHidden(false, animated: true)
+             
+         }
+
+    
 
     /*
     // MARK: - Navigation
