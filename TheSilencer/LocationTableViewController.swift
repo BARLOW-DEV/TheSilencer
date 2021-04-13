@@ -10,17 +10,24 @@ import UIKit
 import CoreData
 
 class LocationTableViewController: UITableViewController {
+
     var dataSource: [NSManagedObject] = []
     var appDelegate: AppDelegate?
-    var context: NSManagedObjectContext?
     var entity: NSEntityDescription?
+    var context: NSManagedObjectContext?
+    
+ 
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
+     
         appDelegate = UIApplication.shared.delegate as? AppDelegate
         context = appDelegate?.persistentContainer.viewContext
         entity = NSEntityDescription.entity(forEntityName: "Locations", in: context!)
+ 
+        
+ 
     }
     
     @IBAction func unwindFromSave(segue: UIStoryboardSegue) {
@@ -33,6 +40,7 @@ class LocationTableViewController: UITableViewController {
             let location = NSManagedObject(entity: entity, insertInto: context)
             location.setValue(source.locationNameResult, forKey: "name")
             location.setValue(source.completeAddress, forKey: "address")
+        
         
             do {
                 try context?.save()
@@ -57,7 +65,6 @@ class LocationTableViewController: UITableViewController {
             self.navigationController?.setNavigationBarHidden(false, animated: true)
             self.navigationController?.setToolbarHidden(false, animated: true)
     }
-
     // MARK: - Table view data source
 
     override func numberOfSections(in tableView: UITableView) -> Int {
@@ -75,9 +82,43 @@ class LocationTableViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "My Cell", for: indexPath)
 
-        cell.textLabel?.text = dataSource[indexPath[1]].value(forKey: "name") as? String
-        cell.detailTextLabel?.text = dataSource[indexPath[1]].value(forKey: "address") as? String
+        cell.textLabel?.text = dataSource[indexPath.row].value(forKey: "name") as? String
+        cell.detailTextLabel?.text = dataSource[indexPath.row].value(forKey: "address") as? String
         return cell
+    }
+    
+    override func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
+        
+        let action = UIContextualAction(style: .destructive, title: "Delete") { (action, view, comletionHandler) in
+            
+            let locationToRemove = self.dataSource[indexPath[1]]
+            self.context?.delete(locationToRemove)
+            self.dataSource.remove(at: indexPath.row)
+            
+            do {
+                try self.context?.save()
+                self.tableView.reloadData()
+            }
+            catch let error as NSError {
+            print("Cannot delete data: \(error)")
+            }
+        }
+        
+        return UISwipeActionsConfiguration(actions: [action])
+    }
+    
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let alert = UIAlertController(title: "Edit Location", message: "Edit name?", preferredStyle: .alert)
+        alert.addTextField()
+        if let entity = self.entity {
+            let location = NSManagedObject(entity: entity, insertInto: context)
+            let textfield = alert.textFields![0]
+            textfield.text = location.value(forKey: "Locations") as? String
+            
+        }
+
+        
+       
     }
     
 

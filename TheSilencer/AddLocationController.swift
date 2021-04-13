@@ -68,7 +68,7 @@ class AddLocationController: UIViewController {
         cityResult = city.text ?? "Bad City"
         stateResult = state.text ?? "Bad State"
         zipResult = zip.text ?? "-1"
-        completeAddress = addressResult + " " + cityResult + " " + stateResult + " " + zipResult
+        completeAddress = addressResult + ", " + cityResult + ", " + stateResult + " " + zipResult
         // Get the new view controller using segue.destination.
         // Pass the selected object to the new view controller.
     }
