@@ -7,52 +7,79 @@
 //
 
 import UIKit
+import CoreData
 
-class ZonesTableTableViewController: UITableViewController {
-    
-    
-    
-    
+class LocationTableViewController: UITableViewController {
+    var dataSource: [NSManagedObject] = []
+    var appDelegate: AppDelegate?
+    var context: NSManagedObjectContext?
+    var entity: NSEntityDescription?
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
-
-        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        // self.navigationItem.rightBarButtonItem = self.editButtonItem
+        appDelegate = UIApplication.shared.delegate as? AppDelegate
+        context = appDelegate?.persistentContainer.viewContext
+        entity = NSEntityDescription.entity(forEntityName: "Locations", in: context!)
     }
     
+    @IBAction func unwindFromSave(segue: UIStoryboardSegue) {
+        guard let source = segue.source as? AddLocationController else {
+            print("Cannot get segue source.")
+            return
+        }
+        
+        if let entity = self.entity {
+            let location = NSManagedObject(entity: entity, insertInto: context)
+            location.setValue(source.locationNameResult, forKey: "name")
+            location.setValue(source.completeAddress, forKey: "address")
+        
+            do {
+                try context?.save()
+                dataSource.append(location)
+                self.tableView.reloadData()
+            } catch let error as NSError {
+                print("Cannot save data: \(error)")
+            }
+        }
+    }
+
+    
     override func viewWillAppear(_ animated: Bool) {
-            
+        
+        let fetchRequest = NSFetchRequest<NSManagedObject>(entityName: "Locations")
+        
+        do {
+            dataSource = try context?.fetch(fetchRequest) ?? []
+        } catch let error as NSError {
+            print("Cannot load data: \(error)")
+        }
             self.navigationController?.setNavigationBarHidden(false, animated: true)
             self.navigationController?.setToolbarHidden(false, animated: true)
-            
-        }
+    }
 
     // MARK: - Table view data source
 
     override func numberOfSections(in tableView: UITableView) -> Int {
         // #warning Incomplete implementation, return the number of sections
-        return 0
+        return 1
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return 0
+        return dataSource.count
     }
     
     
-    /*
+    
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath)
+        let cell = tableView.dequeueReusableCell(withIdentifier: "My Cell", for: indexPath)
 
-        // Configure the cell...
-
+        cell.textLabel?.text = dataSource[indexPath[1]].value(forKey: "name") as? String
+        cell.detailTextLabel?.text = dataSource[indexPath[1]].value(forKey: "address") as? String
         return cell
     }
-    */
+    
 
     /*
     // Override to support conditional editing of the table view.
@@ -70,7 +97,7 @@ class ZonesTableTableViewController: UITableViewController {
             tableView.deleteRows(at: [indexPath], with: .fade)
         } else if editingStyle == .insert {
             // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-        }    
+        }
     }
     */
 
@@ -100,3 +127,4 @@ class ZonesTableTableViewController: UITableViewController {
     */
 
 }
+

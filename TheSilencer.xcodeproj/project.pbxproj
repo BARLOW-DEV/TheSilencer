@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		930B60C12623580D00D1C132 /* ZonesTableTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 930B60C02623580D00D1C132 /* ZonesTableTableViewController.swift */; };
+		930B60C12623580D00D1C132 /* LocationTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 930B60C02623580D00D1C132 /* LocationTableViewController.swift */; };
 		930B60C32623649F00D1C132 /* AddLocationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 930B60C22623649F00D1C132 /* AddLocationController.swift */; };
 		930B60C526236C8C00D1C132 /* LocationTableInformation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 930B60C426236C8C00D1C132 /* LocationTableInformation.swift */; };
 		930B60C726236CD400D1C132 /* AddLocationInformation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 930B60C626236CD400D1C132 /* AddLocationInformation.swift */; };
@@ -21,7 +21,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		930B60C02623580D00D1C132 /* ZonesTableTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZonesTableTableViewController.swift; sourceTree = "<group>"; };
+		930B60C02623580D00D1C132 /* LocationTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationTableViewController.swift; sourceTree = "<group>"; };
 		930B60C22623649F00D1C132 /* AddLocationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddLocationController.swift; sourceTree = "<group>"; };
 		930B60C426236C8C00D1C132 /* LocationTableInformation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationTableInformation.swift; sourceTree = "<group>"; };
 		930B60C626236CD400D1C132 /* AddLocationInformation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddLocationInformation.swift; sourceTree = "<group>"; };
@@ -69,7 +69,7 @@
 				93BCCBD4261E9A4F00962180 /* AppDelegate.swift */,
 				93BCCBD6261E9A4F00962180 /* SceneDelegate.swift */,
 				93BFA9C2261EABC50069FC00 /* InitialViewController.swift */,
-				930B60C02623580D00D1C132 /* ZonesTableTableViewController.swift */,
+				930B60C02623580D00D1C132 /* LocationTableViewController.swift */,
 				930B60C22623649F00D1C132 /* AddLocationController.swift */,
 				930B60C426236C8C00D1C132 /* LocationTableInformation.swift */,
 				930B60C626236CD400D1C132 /* AddLocationInformation.swift */,
@@ -155,7 +155,7 @@
 			files = (
 				930B60C32623649F00D1C132 /* AddLocationController.swift in Sources */,
 				93BFA9C3261EABC50069FC00 /* InitialViewController.swift in Sources */,
-				930B60C12623580D00D1C132 /* ZonesTableTableViewController.swift in Sources */,
+				930B60C12623580D00D1C132 /* LocationTableViewController.swift in Sources */,
 				93BCCBD5261E9A4F00962180 /* AppDelegate.swift in Sources */,
 				93BCCBDF261E9A4F00962180 /* TheSilencer.xcdatamodeld in Sources */,
 				93BCCBD7261E9A4F00962180 /* SceneDelegate.swift in Sources */,
