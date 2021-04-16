@@ -143,10 +143,10 @@
             </objects>
             <point key="canvasLocation" x="3496" y="878"/>
         </scene>
-        <!--Add Location-->
+        <!--AddLocation-->
         <scene sceneID="7Ip-V6-k6i">
             <objects>
-                <viewController id="sbz-cD-4on" customClass="AddLocationController" customModule="TheSilencer" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController title="AddLocation" id="sbz-cD-4on" customClass="AddLocationController" customModule="TheSilencer" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Meq-Jj-3GE">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -227,8 +227,6 @@
                     </view>
                     <toolbarItems>
                         <barButtonItem style="plain" systemItem="flexibleSpace" id="5Q8-W9-5UA"/>
-                        <barButtonItem title="Edit" id="UHD-kA-lLR"/>
-                        <barButtonItem style="plain" systemItem="flexibleSpace" id="HSy-pt-1h4"/>
                         <barButtonItem title="Save" id="lVY-Sr-ep9">
                             <connections>
                                 <segue destination="GQ7-IT-7ih" kind="unwind" unwindAction="unwindFromSaveWithSegue:" id="UJh-Tm-Gdv"/>

@@ -15,8 +15,9 @@ class LocationTableViewController: UITableViewController {
     var appDelegate: AppDelegate?
     var entity: NSEntityDescription?
     var context: NSManagedObjectContext?
-    
- 
+    var nameTextField: UITextField?
+    var addressTextField: UITextField?
+    var items:[Locations]?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -25,11 +26,22 @@ class LocationTableViewController: UITableViewController {
         appDelegate = UIApplication.shared.delegate as? AppDelegate
         context = appDelegate?.persistentContainer.viewContext
         entity = NSEntityDescription.entity(forEntityName: "Locations", in: context!)
- 
         
+        fetchLocationData()
  
     }
-    
+    func fetchLocationData(){
+        do{
+            self.items = try context?.fetch(Locations.fetchRequest())
+            DispatchQueue.main.async{
+                self.tableView.reloadData()
+            }
+    }
+        catch{
+            
+        }
+    }
+  
     @IBAction func unwindFromSave(segue: UIStoryboardSegue) {
         guard let source = segue.source as? AddLocationController else {
             print("Cannot get segue source.")
@@ -52,7 +64,6 @@ class LocationTableViewController: UITableViewController {
         }
     }
 
-    
     override func viewWillAppear(_ animated: Bool) {
         
         let fetchRequest = NSFetchRequest<NSManagedObject>(entityName: "Locations")
@@ -94,6 +105,7 @@ class LocationTableViewController: UITableViewController {
             let locationToRemove = self.dataSource[indexPath[1]]
             self.context?.delete(locationToRemove)
             self.dataSource.remove(at: indexPath.row)
+        
             
             do {
                 try self.context?.save()
@@ -107,28 +119,71 @@ class LocationTableViewController: UITableViewController {
         return UISwipeActionsConfiguration(actions: [action])
     }
     
-    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let alert = UIAlertController(title: "Edit Location", message: "Edit name?", preferredStyle: .alert)
-        alert.addTextField()
-        if let entity = self.entity {
-            let location = NSManagedObject(entity: entity, insertInto: context)
-            let textfield = alert.textFields![0]
-            textfield.text = location.value(forKey: "Locations") as? String
-            
-        }
+//    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+//        let alert = UIAlertController(title: "Edit Location", message: "Edit name?", preferredStyle: .alert)
+//        alert.addTextField()
+//        if let entity = self.entity {
+//            let location = NSManagedObject(entity: entity, insertInto: context)
+//            let textfield = alert.textFields![0]
+//            textfield.text = location.value(forKey: "Locations") as? String
+//
+//        }
+//
+//    }
 
-        
-       
+        override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+            // Selected locationName
+            let locationName = self.items![indexPath.row]
+           
+            let alertController = UIAlertController(title: "Edit Location", message: "Edit name?", preferredStyle: .alert)
+            alertController.addTextField()
+           
+            
+            let textfield = alertController.textFields![0]
+            textfield.text = locationName.name
+           
+            // Configure the button handler
+            let okAction = UIAlertAction(title: "Update", style: .default) { action in
+
+                // Get the textfield for the alert
+                let textfield = alertController.textFields![0]
+              
+                // Edit name property of locationName object
+                locationName.name = textfield.text
+               
+    
+            // Save the data
+                do {
+                    try self.context?.save()
+                   
+                }
+                catch {
+                }
+                
+                self.fetchLocationData()
+               
+               
+            }
+
+            let cancelAction = UIAlertAction(title: "Cancel", style: .cancel) { action in
+
+                //Do something when cancel is tapped
+            }
+
+            alertController.addAction(okAction)
+            alertController.addAction(cancelAction)
+
+            
+            // show alert view
+            present(alertController, animated: true) {
+                //Do something when alert view is presented
+            }
+
     }
     
+    
 
-    /*
-    // Override to support conditional editing of the table view.
-    override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
-        // Return false if you do not want the specified item to be editable.
-        return true
-    }
-    */
+   
 
     /*
     // Override to support editing the table view.
