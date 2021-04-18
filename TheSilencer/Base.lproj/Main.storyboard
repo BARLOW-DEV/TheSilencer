@@ -94,6 +94,7 @@
                     <toolbarItems>
                         <barButtonItem style="plain" systemItem="flexibleSpace" id="uA5-mL-sv8"/>
                         <barButtonItem title="Item" image="info.circle.fill" catalog="system" id="R1N-gt-inb">
+                            <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <connections>
                                 <segue destination="dYx-1F-REM" kind="presentation" id="wD0-iu-QmO"/>
                             </connections>
@@ -120,7 +121,48 @@
                     <view key="view" contentMode="scaleToFill" id="rdA-dH-oVh">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="Toggle Button Instructions" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="yOO-yc-MQf">
+                                <rect key="frame" x="87" y="206" width="240" height="128"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="128" id="aAe-dp-YlM"/>
+                                </constraints>
+                                <color key="textColor" systemColor="systemRedColor" red="1" green="0.23137254900000001" blue="0.18823529410000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="Zone Edit Arrow instructions" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="M94-XL-fur">
+                                <rect key="frame" x="87" y="367" width="240" height="228"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <color key="textColor" systemColor="systemRedColor" red="1" green="0.23137254900000001" blue="0.18823529410000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="Add Button Instructions" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="0Lp-Lf-WR1">
+                                <rect key="frame" x="87" y="70" width="240" height="128"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="128" id="FHc-yL-EYz"/>
+                                </constraints>
+                                <color key="textColor" systemColor="systemRedColor" red="1" green="0.23137254900000001" blue="0.18823529410000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                        </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="0Lp-Lf-WR1" firstAttribute="centerX" secondItem="rdA-dH-oVh" secondAttribute="centerX" id="AcW-ud-3YU"/>
+                            <constraint firstItem="yOO-yc-MQf" firstAttribute="leading" secondItem="0Lp-Lf-WR1" secondAttribute="leading" id="F4s-U1-Tct"/>
+                            <constraint firstItem="yOO-yc-MQf" firstAttribute="top" secondItem="0Lp-Lf-WR1" secondAttribute="bottom" constant="8" id="Nl2-jx-Rir"/>
+                            <constraint firstItem="M94-XL-fur" firstAttribute="top" secondItem="yOO-yc-MQf" secondAttribute="bottom" constant="33" id="SM5-ZA-oQk"/>
+                            <constraint firstItem="M94-XL-fur" firstAttribute="trailing" secondItem="yOO-yc-MQf" secondAttribute="trailing" id="Wpr-jF-vvT"/>
+                            <constraint firstItem="M94-XL-fur" firstAttribute="leading" secondItem="yOO-yc-MQf" secondAttribute="leading" id="XI8-eE-rYW"/>
+                            <constraint firstItem="yOO-yc-MQf" firstAttribute="trailing" secondItem="0Lp-Lf-WR1" secondAttribute="trailing" id="ZN7-jS-tdO"/>
+                            <constraint firstItem="RE7-OI-j46" firstAttribute="bottom" secondItem="M94-XL-fur" secondAttribute="bottom" constant="213" id="amW-1u-0ra"/>
+                            <constraint firstItem="0Lp-Lf-WR1" firstAttribute="leading" secondItem="RE7-OI-j46" secondAttribute="leading" constant="87" id="d3N-I7-Agt"/>
+                            <constraint firstItem="0Lp-Lf-WR1" firstAttribute="top" secondItem="RE7-OI-j46" secondAttribute="top" constant="70" id="iBT-nF-xfv"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="RE7-OI-j46"/>
                     </view>
                 </viewController>
@@ -128,25 +170,69 @@
             </objects>
             <point key="canvasLocation" x="2616" y="878"/>
         </scene>
-        <!--Add Location Information-->
+        <!--Locations-->
         <scene sceneID="70k-rG-Ws4">
             <objects>
                 <viewController id="Kga-hb-Ldb" customClass="AddLocationInformation" customModule="TheSilencer" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="XwX-Gf-ydx">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="Name Instructions" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="dPZ-Oa-mXs">
+                                <rect key="frame" x="87" y="69" width="240" height="128"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="128" id="YTt-rD-S5w"/>
+                                </constraints>
+                                <color key="textColor" systemColor="systemRedColor" red="1" green="0.23137254900000001" blue="0.18823529410000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="Address instructions" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="ay8-mx-Nqa">
+                                <rect key="frame" x="87" y="219" width="240" height="128"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="128" id="MMl-5D-pYB"/>
+                                </constraints>
+                                <color key="textColor" systemColor="systemRedColor" red="1" green="0.23137254900000001" blue="0.18823529410000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="Delete Instructions" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="Wqr-W5-5UT">
+                                <rect key="frame" x="87" y="355" width="240" height="132"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <color key="textColor" systemColor="systemRedColor" red="1" green="0.23137254900000001" blue="0.18823529410000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                        </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="dPZ-Oa-mXs" firstAttribute="leading" secondItem="Wqr-W5-5UT" secondAttribute="leading" id="1TK-ck-Qnb"/>
+                            <constraint firstItem="ay8-mx-Nqa" firstAttribute="top" secondItem="dPZ-Oa-mXs" secondAttribute="bottom" constant="22" id="7dS-G4-pyX"/>
+                            <constraint firstItem="Wqr-W5-5UT" firstAttribute="top" secondItem="ay8-mx-Nqa" secondAttribute="bottom" constant="8" id="Brl-hT-wSL"/>
+                            <constraint firstItem="dPZ-Oa-mXs" firstAttribute="trailing" secondItem="ay8-mx-Nqa" secondAttribute="trailing" id="KCd-1c-QmD"/>
+                            <constraint firstItem="dPZ-Oa-mXs" firstAttribute="centerX" secondItem="XwX-Gf-ydx" secondAttribute="centerX" id="Nke-M5-nuA"/>
+                            <constraint firstItem="dPZ-Oa-mXs" firstAttribute="leading" secondItem="ay8-mx-Nqa" secondAttribute="leading" id="WhN-7T-KMv"/>
+                            <constraint firstItem="dPZ-Oa-mXs" firstAttribute="top" secondItem="1ET-YF-4nF" secondAttribute="top" constant="69" id="X3A-aD-ble"/>
+                            <constraint firstItem="Wqr-W5-5UT" firstAttribute="centerY" secondItem="XwX-Gf-ydx" secondAttribute="centerY" id="XK1-ma-brO"/>
+                            <constraint firstItem="dPZ-Oa-mXs" firstAttribute="trailing" secondItem="Wqr-W5-5UT" secondAttribute="trailing" id="hxF-mk-gB5"/>
+                            <constraint firstItem="dPZ-Oa-mXs" firstAttribute="leading" secondItem="1ET-YF-4nF" secondAttribute="leading" constant="87" id="uzw-SM-7nv"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="1ET-YF-4nF"/>
                     </view>
+                    <navigationItem key="navigationItem" title="Locations" id="hsO-BJ-e4g">
+                        <barButtonItem key="rightBarButtonItem" title="Item" image="plus" catalog="system" id="a3X-je-L9k"/>
+                    </navigationItem>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bKS-wS-iUr" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3496" y="878"/>
+            <point key="canvasLocation" x="3495.652173913044" y="877.90178571428567"/>
         </scene>
-        <!--Add Location-->
+        <!--AddLocation-->
         <scene sceneID="7Ip-V6-k6i">
             <objects>
-                <viewController id="sbz-cD-4on" customClass="AddLocationController" customModule="TheSilencer" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController title="AddLocation" id="sbz-cD-4on" customClass="AddLocationController" customModule="TheSilencer" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Meq-Jj-3GE">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -227,9 +313,8 @@
                     </view>
                     <toolbarItems>
                         <barButtonItem style="plain" systemItem="flexibleSpace" id="5Q8-W9-5UA"/>
-                        <barButtonItem title="Edit" id="UHD-kA-lLR"/>
-                        <barButtonItem style="plain" systemItem="flexibleSpace" id="HSy-pt-1h4"/>
                         <barButtonItem title="Save" id="lVY-Sr-ep9">
+                            <color key="tintColor" systemColor="systemRedColor" red="1" green="0.23137254900000001" blue="0.18823529410000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             <connections>
                                 <segue destination="GQ7-IT-7ih" kind="unwind" unwindAction="unwindFromSaveWithSegue:" id="UJh-Tm-Gdv"/>
                             </connections>
@@ -276,6 +361,7 @@
             <point key="canvasLocation" x="844.92753623188412" y="137.94642857142856"/>
         </scene>
     </scenes>
+    <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
     <resources>
         <image name="MuteIcon" width="1280" height="1280"/>
         <image name="info.circle.fill" catalog="system" width="128" height="121"/>
