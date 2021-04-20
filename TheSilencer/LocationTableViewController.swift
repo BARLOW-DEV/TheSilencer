@@ -134,22 +134,28 @@ class LocationTableViewController: UITableViewController {
         override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
             // Selected locationName
             let locationName = self.items![indexPath.row]
+            let subTitle = self.items![indexPath.row]
+            
            
-            let alertController = UIAlertController(title: "Edit Location", message: "Edit name?", preferredStyle: .alert)
+            
+            let alertController = UIAlertController(title: "Edit info", message: "Edit location name and/or address?", preferredStyle: .alert)
             alertController.addTextField()
-           
+            alertController.addTextField()
             
             let textfield = alertController.textFields![0]
             textfield.text = locationName.name
-           
+            let subTextField = alertController.textFields![1]
+            subTextField.text = subTitle.address
             // Configure the button handler
             let okAction = UIAlertAction(title: "Update", style: .default) { action in
 
                 // Get the textfield for the alert
                 let textfield = alertController.textFields![0]
+                let subTextField = alertController.textFields![1]
               
                 // Edit name property of locationName object
-                locationName.name = textfield.text
+               locationName.name = textfield.text
+               subTitle.address = subTextField.text
                
     
             // Save the data
