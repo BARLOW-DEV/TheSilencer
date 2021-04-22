@@ -10,14 +10,15 @@ import UIKit
 
 class AddLocationController: UIViewController {
     
-  
+  // Textfield outlets
     @IBOutlet weak var locationName: UITextField!
     @IBOutlet weak var address: UITextField!
     @IBOutlet weak var city: UITextField!
-    @IBOutlet weak var state: UITextField!
-    @IBOutlet weak var zip: UITextField!
+//    @IBOutlet weak var state: UITextField!
+//    @IBOutlet weak var zip: UITextField!
     
     
+    // Initalize empty strings
     var locationNameResult: String = ""
     var addressResult: String = ""
     var cityResult: String = ""
@@ -25,23 +26,24 @@ class AddLocationController: UIViewController {
     var zipResult: String = ""
     var completeAddress: String = ""
     
-    let states = [ "Alabama", "Alaska", "Arizona", "Arkansas", "California", "Colorado", "Conneticut", "Delaware", "Florida", "Georgia", "Hawaii", "Idaho", "Illinois", "Indiana", "Iowa", "Kansas", "Kentucky", "Louisiana", "Maine", "Maryland", "Massachusetts", "Michigan", "Minnesota", "Mississippi", "Missouri", "Montana", "Nebraska", "Nevada", "New Hampshire", "New Jersey", "New Mexico", "New York", "North Carolina", "North Dakota", "Ohio", "Oklahoma", "Oregon", "Pennsylvania", "Rhode Island", "South Carolina", "South Dakota", "Tennessee", "Texas", "Utah", "Vermont", "Virginia", "Washington", "West Virginia", "Wisconsin", "Wyoming" ]
+//    let states = [ "Alabama", "Alaska", "Arizona", "Arkansas", "California", "Colorado", "Conneticut", "Delaware", "Florida", "Georgia", "Hawaii", "Idaho", "Illinois", "Indiana", "Iowa", "Kansas", "Kentucky", "Louisiana", "Maine", "Maryland", "Massachusetts", "Michigan", "Minnesota", "Mississippi", "Missouri", "Montana", "Nebraska", "Nevada", "New Hampshire", "New Jersey", "New Mexico", "New York", "North Carolina", "North Dakota", "Ohio", "Oklahoma", "Oregon", "Pennsylvania", "Rhode Island", "South Carolina", "South Dakota", "Tennessee", "Texas", "Utah", "Vermont", "Virginia", "Washington", "West Virginia", "Wisconsin", "Wyoming" ]
     
     var pickerView = UIPickerView()
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         pickerView.delegate = self
-        pickerView.dataSource = self
-        
-        state.inputView = pickerView
+      //  pickerView.dataSource = self
+       
+        //state.inputView = pickerView
         
         locationName.delegate = self
         address.delegate = self
         city.delegate = self
-        state.delegate = self
-        zip.delegate = self
+//        state.delegate = self
+//        zip.delegate = self
         
         // Do any additional setup after loading the view.
     }
@@ -53,7 +55,7 @@ class AddLocationController: UIViewController {
          }
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
-        zip.resignFirstResponder()
+       // zip.resignFirstResponder()
     }
 
     
@@ -66,8 +68,8 @@ class AddLocationController: UIViewController {
         locationNameResult = locationName.text ?? "Bad Name"
         addressResult = address.text ?? "Bad Address"
         cityResult = city.text ?? "Bad City"
-        stateResult = state.text ?? "Bad State"
-        zipResult = zip.text ?? "-1"
+//        stateResult = state.text ?? "Bad State"
+//        zipResult = zip.text ?? "-1"
         completeAddress = addressResult + ", " + cityResult + ", " + stateResult + " " + zipResult
         // Get the new view controller using segue.destination.
         // Pass the selected object to the new view controller.
@@ -75,21 +77,21 @@ class AddLocationController: UIViewController {
     
 
 }
-
-extension AddLocationController: UIPickerViewDelegate, UIPickerViewDataSource {
+// UIPickerViewDataSource was in this extension
+extension AddLocationController: UIPickerViewDelegate {
     func numberOfComponents(in pickerView: UIPickerView) -> Int {
         return 1
     }
-    func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
-        return states.count
-    }
-    func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
-        return states[row]
-    }
-    func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
-        state.text = states[row]
-        state.resignFirstResponder()
-    }
+//    func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
+//        return states.count
+//    }
+//    func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
+//        return states[row]
+//    }
+//    func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
+//        state.text = states[row]
+//        state.resignFirstResponder()
+//    }
     
 }
 
