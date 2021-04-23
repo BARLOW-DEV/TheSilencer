@@ -128,45 +128,48 @@ class LocationTableViewController: UITableViewController {
         return UISwipeActionsConfiguration(actions: [action])
     }
     
-    // Allows the user to tap a cell to update its title and subtitle
+     //Allows the user to tap a cell to update its title and subtitle
         override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
             // Selected locationName
-            let locationName = self.items![indexPath.row]
-            let subTitle = self.items![indexPath.row]
+            let locationName = self.dataSource[indexPath.row]
+            let subTitle = self.dataSource[indexPath.row]
+
             
-           
-            
+
+
             let alertController = UIAlertController(title: "Edit info", message: "Edit location name and/or address?", preferredStyle: .alert)
             alertController.addTextField()
             alertController.addTextField()
-            
+
             let textfield = alertController.textFields![0]
             textfield.text = locationName.name
             let subTextField = alertController.textFields![1]
             subTextField.text = subTitle.address
+
             // Configure the button handler
             let okAction = UIAlertAction(title: "Update", style: .default) { action in
 
                 // Get the textfield for the alert
                 let textfield = alertController.textFields![0]
                 let subTextField = alertController.textFields![1]
-              
+
                 // Edit name property of locationName object
              locationName.name = textfield.text
                subTitle.address = subTextField.text
-               
-    
+
+
             // Save the data
                 do {
                     try self.context?.save()
-                   
+
                 }
                 catch {
                 }
-                
+
+                self.tableView.reloadData()
                 self.fetchLocationData()
-               
-               
+
+
             }
 
             let cancelAction = UIAlertAction(title: "Cancel", style: .cancel) { action in
@@ -177,12 +180,14 @@ class LocationTableViewController: UITableViewController {
             alertController.addAction(okAction)
             alertController.addAction(cancelAction)
 
-            
+
             // show alert view
             present(alertController, animated: true) {
                 //Do something when alert view is presented
             }
     }
+    
+    
     // Location merge attempt
 //     override func tableView(_ tableView: UITableView, leadingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
 //         let notificationInfo = LocationNotificationInfo(notificationId: "home_notification_id",
