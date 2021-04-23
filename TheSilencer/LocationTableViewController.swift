@@ -18,8 +18,8 @@ class LocationTableViewController: UITableViewController {
     var context: NSManagedObjectContext?
     var nameTextField: UITextField?
     var addressTextField: UITextField?
-    var items:[Locations]?
-    private let locationNotificationScheduler = LocationNotificationScheduler()
+   // var items:[Locations]?
+   // private let locationNotificationScheduler = LocationNotificationScheduler()
     
     
     // Fetch data
@@ -30,10 +30,10 @@ class LocationTableViewController: UITableViewController {
         context = appDelegate?.persistentContainer.viewContext
         entity = NSEntityDescription.entity(forEntityName: "Locations", in: context!)
         
-        fetchLocationData()
+        //fetchLocationData()
  
     }
-    
+    /*
     // Fetch data
     func fetchLocationData(){
         do{
@@ -46,7 +46,7 @@ class LocationTableViewController: UITableViewController {
             
         }
     }
-  
+  */
     // Check if the data can be stored into Location Table view
     @IBAction func unwindFromSave(segue: UIStoryboardSegue) {
         guard let source = segue.source as? AddLocationController else {
@@ -56,8 +56,8 @@ class LocationTableViewController: UITableViewController {
         
         if let entity = self.entity {
             let location = NSManagedObject(entity: entity, insertInto: context)
-            location.setValue(source.locationNameResult, forKey: "name")
-            location.setValue(source.completeAddress, forKey: "address")
+            //location.setValue(source.locationNameResult, forKey: "name")
+            //location.setValue(source.completeAddress, forKey: "address")
         
         
             do {
@@ -129,6 +129,7 @@ class LocationTableViewController: UITableViewController {
     }
     
     // Allows the user to tap a cell to update its title and subtitle
+    /*
         override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
             // Selected locationName
             let locationName = self.items![indexPath.row]
@@ -183,6 +184,7 @@ class LocationTableViewController: UITableViewController {
                 //Do something when alert view is presented
             }
     }
+ */
     // Location merge attempt
 //     override func tableView(_ tableView: UITableView, leadingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
 //         let notificationInfo = LocationNotificationInfo(notificationId: "home_notification_id",
