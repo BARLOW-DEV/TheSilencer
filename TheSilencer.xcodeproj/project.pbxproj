@@ -14,8 +14,6 @@
 		930B60C32623649F00D1C132 /* AddLocationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 930B60C22623649F00D1C132 /* AddLocationController.swift */; };
 		930B60C526236C8C00D1C132 /* LocationTableInformation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 930B60C426236C8C00D1C132 /* LocationTableInformation.swift */; };
 		930B60C726236CD400D1C132 /* AddLocationInformation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 930B60C626236CD400D1C132 /* AddLocationInformation.swift */; };
-		930B60CC26253EE100D1C132 /* Locations+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 930B60CA26253EE100D1C132 /* Locations+CoreDataClass.swift */; };
-		930B60CD26253EE100D1C132 /* Locations+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 930B60CB26253EE100D1C132 /* Locations+CoreDataProperties.swift */; };
 		93BCCBD5261E9A4F00962180 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93BCCBD4261E9A4F00962180 /* AppDelegate.swift */; };
 		93BCCBD7261E9A4F00962180 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93BCCBD6261E9A4F00962180 /* SceneDelegate.swift */; };
 		93BCCBDC261E9A4F00962180 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 93BCCBDA261E9A4F00962180 /* Main.storyboard */; };
@@ -33,8 +31,6 @@
 		930B60C22623649F00D1C132 /* AddLocationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddLocationController.swift; sourceTree = "<group>"; };
 		930B60C426236C8C00D1C132 /* LocationTableInformation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationTableInformation.swift; sourceTree = "<group>"; };
 		930B60C626236CD400D1C132 /* AddLocationInformation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddLocationInformation.swift; sourceTree = "<group>"; };
-		930B60CA26253EE100D1C132 /* Locations+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Locations+CoreDataClass.swift"; sourceTree = "<group>"; };
-		930B60CB26253EE100D1C132 /* Locations+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Locations+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		93BCCBD1261E9A4F00962180 /* TheSilencer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TheSilencer.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		93BCCBD4261E9A4F00962180 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		93BCCBD6261E9A4F00962180 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -57,15 +53,6 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		930B60CE26253F5600D1C132 /* Model */ = {
-			isa = PBXGroup;
-			children = (
-				930B60CA26253EE100D1C132 /* Locations+CoreDataClass.swift */,
-				930B60CB26253EE100D1C132 /* Locations+CoreDataProperties.swift */,
-			);
-			path = Model;
-			sourceTree = "<group>";
-		};
 		93BCCBC8261E9A4F00962180 = {
 			isa = PBXGroup;
 			children = (
@@ -85,7 +72,6 @@
 		93BCCBD3261E9A4F00962180 /* TheSilencer */ = {
 			isa = PBXGroup;
 			children = (
-				930B60CE26253F5600D1C132 /* Model */,
 				93BCCBD4261E9A4F00962180 /* AppDelegate.swift */,
 				93BCCBD6261E9A4F00962180 /* SceneDelegate.swift */,
 				93BFA9C2261EABC50069FC00 /* InitialViewController.swift */,
@@ -184,9 +170,7 @@
 				34F6CDE7263124A70003F6DC /* LocationNotificationScheduler.swift in Sources */,
 				34F6CDE5263124930003F6DC /* LocationNotificationInfo.swift in Sources */,
 				93BCCBD7261E9A4F00962180 /* SceneDelegate.swift in Sources */,
-				930B60CC26253EE100D1C132 /* Locations+CoreDataClass.swift in Sources */,
 				930B60C526236C8C00D1C132 /* LocationTableInformation.swift in Sources */,
-				930B60CD26253EE100D1C132 /* Locations+CoreDataProperties.swift in Sources */,
 				34F6CDE9263124AA0003F6DC /* LocationNotificationSchedulerDelegate.swift in Sources */,
 				930B60C726236CD400D1C132 /* AddLocationInformation.swift in Sources */,
 			);
