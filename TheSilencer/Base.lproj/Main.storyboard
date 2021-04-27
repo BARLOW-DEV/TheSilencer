@@ -15,30 +15,24 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3gX-pI-HgQ">
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3gX-pI-HgQ">
                                 <rect key="frame" x="46" y="701" width="323" height="68"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="68" id="ytm-dc-vXg"/>
-                                </constraints>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="36"/>
-                                <state key="normal" title="Start Silencer">
+                                <state key="normal" title="Bread Crumbs">
                                     <color key="titleColor" systemColor="systemRedColor" red="1" green="0.23137254900000001" blue="0.18823529410000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cim-f1-Shh">
-                                <rect key="frame" x="27" y="224" width="360" height="360"/>
+                                <rect key="frame" x="59" y="343" width="296" height="211"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" image="imageonline-co-whitebackgroundremoved"/>
+                                <state key="normal" image="LeavingBreadCrumbsBehind"/>
                                 <connections>
                                     <segue destination="tbf-Vq-82Z" kind="show" id="ENI-Dx-Urs"/>
                                 </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <constraints>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="3gX-pI-HgQ" secondAttribute="bottom" constant="93" id="5cv-b0-mYE"/>
-                            <constraint firstItem="3gX-pI-HgQ" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="46" id="ld8-DB-aoC"/>
-                        </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <navigationItem key="navigationItem" id="a8M-MC-UOL"/>
@@ -118,22 +112,11 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="0Lp-Lf-WR1">
-                                <rect key="frame" x="87" y="70" width="240" height="301"/>
+                                <rect key="frame" x="54" y="312" width="307" height="219"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
-                                <string key="text">Add Button Instructions 
+                                <string key="text">Add Button Instructions: 
 Click the plus button on the upper right screen to add an location, longitude and latitude.  </string>
-                                <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="27"/>
-                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
-                            </textView>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="M94-XL-fur">
-                                <rect key="frame" x="87" y="379" width="240" height="361"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
-                                <string key="text">Update Location Instructions
-Tap on the desired cell. The tap will bring up an alert that asks the user to update the location name and/or the longitude/latitude. 
-</string>
                                 <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="27"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
@@ -155,45 +138,42 @@ Tap on the desired cell. The tap will bring up an alert that asks the user to up
                         <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="ay8-mx-Nqa">
-                                <rect key="frame" x="87" y="167" width="240" height="181"/>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="ay8-mx-Nqa">
+                                <rect key="frame" x="20" y="170" width="373" height="147"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="128" id="cVs-Tp-Qw1"/>
-                                </constraints>
-                                <string key="text">Longitude/Latitude instructions
+                                <string key="text">Longitude/Latitude instructions: 
 Enter values for longitude and latitude text fields to determine the user's location
 </string>
                                 <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="22"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="Wqr-W5-5UT">
-                                <rect key="frame" x="87" y="383" width="240" height="236"/>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="Wqr-W5-5UT">
+                                <rect key="frame" x="27" y="325" width="360" height="216"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
-                                <string key="text">Save Instructions
+                                <string key="text">Save Instructions: 
 Once the values for the location name, the longitude, and the latitude are entered, tap the save button to store the information for the previous screen</string>
                                 <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="22"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="dPZ-Oa-mXs">
-                                <rect key="frame" x="87" y="20" width="240" height="162"/>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="dPZ-Oa-mXs">
+                                <rect key="frame" x="20" y="20" width="374" height="142"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="128" id="LWD-2L-tA4"/>
-                                </constraints>
-                                <string key="text">Location name Instructions
+                                <string key="text">Location name Instructions: 
 Enter desired name in the name of location textfield. </string>
                                 <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="22"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="SlE-Y3-TmF">
-                                <rect key="frame" x="87" y="627" width="240" height="181"/>
+                                <rect key="frame" x="27" y="549" width="360" height="165"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
-                                <string key="text">Get Location
+                                <string key="text">Get Location: 
 Tap button to generate longitude and latitude for the user's current location</string>
                                 <color key="textColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="22"/>
@@ -201,18 +181,6 @@ Tap button to generate longitude and latitude for the user's current location</s
                             </textView>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
-                        <constraints>
-                            <constraint firstItem="ay8-mx-Nqa" firstAttribute="top" secondItem="dPZ-Oa-mXs" secondAttribute="bottom" constant="31" id="61x-bV-Uaz"/>
-                            <constraint firstItem="Wqr-W5-5UT" firstAttribute="top" secondItem="ay8-mx-Nqa" secondAttribute="bottom" constant="46" id="8X6-5Y-nYa"/>
-                            <constraint firstItem="ay8-mx-Nqa" firstAttribute="leading" secondItem="Wqr-W5-5UT" secondAttribute="leading" id="I5B-Cp-Tbt"/>
-                            <constraint firstItem="dPZ-Oa-mXs" firstAttribute="leading" secondItem="1ET-YF-4nF" secondAttribute="leading" constant="87" id="J1I-E1-L0f"/>
-                            <constraint firstItem="ay8-mx-Nqa" firstAttribute="trailing" secondItem="Wqr-W5-5UT" secondAttribute="trailing" id="LwU-94-h9c"/>
-                            <constraint firstItem="dPZ-Oa-mXs" firstAttribute="top" secondItem="1ET-YF-4nF" secondAttribute="top" constant="83" id="Q4O-IL-2en"/>
-                            <constraint firstItem="dPZ-Oa-mXs" firstAttribute="leading" secondItem="ay8-mx-Nqa" secondAttribute="leading" id="S8Y-Uu-c5d"/>
-                            <constraint firstItem="1ET-YF-4nF" firstAttribute="bottom" secondItem="Wqr-W5-5UT" secondAttribute="bottom" constant="156" id="g5D-YW-XtX"/>
-                            <constraint firstItem="dPZ-Oa-mXs" firstAttribute="trailing" secondItem="ay8-mx-Nqa" secondAttribute="trailing" id="vMJ-ao-1yz"/>
-                            <constraint firstItem="dPZ-Oa-mXs" firstAttribute="centerX" secondItem="XwX-Gf-ydx" secondAttribute="centerX" id="vzc-33-32r"/>
-                        </constraints>
                         <viewLayoutGuide key="safeArea" id="1ET-YF-4nF"/>
                     </view>
                     <navigationItem key="navigationItem" title="Locations" id="hsO-BJ-e4g">
@@ -364,7 +332,7 @@ Tap button to generate longitude and latitude for the user's current location</s
     </scenes>
     <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
     <resources>
-        <image name="imageonline-co-whitebackgroundremoved" width="360" height="360"/>
+        <image name="LeavingBreadCrumbsBehind" width="296" height="211"/>
         <image name="info.circle.fill" catalog="system" width="128" height="121"/>
         <image name="plus" catalog="system" width="128" height="113"/>
     </resources>
